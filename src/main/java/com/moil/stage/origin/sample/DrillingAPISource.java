@@ -1,4 +1,4 @@
-package com.marathonoil.stage.origin.sample;
+package com.moil.stage.origin.sample;
 /*
  * Copyright 2017 StreamSets Inc.
  *
@@ -143,11 +143,10 @@ public class DrillingAPISource extends BaseSource {
   private HttpResponseActionConfigBean timeoutActionConfig;
   private final HttpClientCommon clientCommon;
 
-  import com.streamsets.pipeline.stage.origin.lib.
   /**
    * @param conf Configuration object for the HTTP client
    */
-  public HttpClientSource(final HttpClientConfigBean conf) {
+  public DrillingAPISource(final HttpClientConfigBean conf) {
     this.conf = conf;
     clientCommon = new HttpClientCommon(conf.client);
   }
