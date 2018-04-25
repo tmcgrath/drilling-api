@@ -33,8 +33,7 @@
   </properties>
 
   <dependencies>
-    <!-- Core StreamSets Dependencies for Stage Libraries -->
-    <!-- Need to be without snapshot at any the point of the release -->
+
     <dependency>
       <groupId>com.streamsets</groupId>
       <artifactId>streamsets-datacollector-api</artifactId>
@@ -54,25 +53,23 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- new -->
-    <dependency>
-      <groupId>com.streamsets</groupId>
-      <artifactId>streamsets-datacollector-sdk</artifactId>
-      <version>${streamsets.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.streamsets</groupId>
-      <artifactId>streamsets-datacollector-common</artifactId>
-      <version>${streamsets.version}</version>
-      <scope>compile</scope>
-    </dependency>
+
+    <!-- Compile Dependencies -->
+
     <dependency>
       <groupId>com.streamsets</groupId>
       <artifactId>streamsets-datacollector-commonlib</artifactId>
       <version>${streamsets.version}</version>
       <scope>compile</scope>
     </dependency>
+
+    <dependency>
+      <groupId>com.streamsets</groupId>
+      <artifactId>streamsets-datacollector-common</artifactId>
+      <version>${streamsets.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
     <dependency>
       <groupId>com.streamsets</groupId>
       <artifactId>streamsets-datacollector-httpcommonlib</artifactId>
@@ -92,17 +89,6 @@
       <scope>compile</scope>
     </dependency>
 
-    <!-- end new -->
-
-    <!-- end -->
-
-    <!-- Compile Dependencies -->
-
-    <dependency>
-      <groupId>com.streamsets</groupId>
-      <artifactId>streamsets-datacollector-commonlib</artifactId>
-      <version>${project.version}</version>
-    </dependency>
 
     <dependency>
       <groupId>org.glassfish.jersey.security</groupId>
@@ -125,6 +111,7 @@
       <version>${streamsets.version}</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
