@@ -15,6 +15,7 @@
  */
 package com.moil.stage.origin.sample;
 
+import com.moil.stage.origin.DrillingAPIDSource;
 import com.streamsets.pipeline.api.Record;
 import com.streamsets.pipeline.sdk.SourceRunner;
 import com.streamsets.pipeline.sdk.StageRunner;

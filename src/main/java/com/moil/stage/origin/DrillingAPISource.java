@@ -1,4 +1,4 @@
-package com.moil.stage.origin.sample;
+package com.moil.stage.origin;
 /*
  * Copyright 2017 StreamSets Inc.
  *
