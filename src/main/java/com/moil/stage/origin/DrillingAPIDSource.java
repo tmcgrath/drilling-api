@@ -53,7 +53,7 @@ import com.streamsets.pipeline.stage.origin.http.HttpClientSource;
 @HideConfigs(value = {
         "conf.client.numThreads"
 })
-@ConfigGroups(com.streamsets.pipeline.stage.origin.http.Groups.class)
+@ConfigGroups(Groups.class)
 @GenerateResourceBundle
 public class DrillingAPIDSource extends DSource {
 

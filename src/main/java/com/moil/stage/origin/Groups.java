@@ -20,7 +20,15 @@ import com.streamsets.pipeline.api.Label;
 
 @GenerateResourceBundle
 public enum Groups implements Label {
-  SAMPLE("Sample"),
+  HTTP("HTTP"),
+  PAGINATION("Pagination"),
+  CREDENTIALS("Credentials"),
+  OAUTH2("OAuth 2"),
+  PROXY("Proxy"),
+  TLS("TLS"),
+  TIMEOUT("Timeout Handling"),
+  DATA_FORMAT("Data Format"),
+  LOGGING("Logging")
   ;
 
   private final String label;
@@ -29,7 +37,6 @@ public enum Groups implements Label {
     this.label = label;
   }
 
-  /** {@inheritDoc} */
   @Override
   public String getLabel() {
     return this.label;

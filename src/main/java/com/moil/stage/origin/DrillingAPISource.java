@@ -607,7 +607,9 @@ public class DrillingAPISource extends BaseSource {
           RecordEL.setRecordInContext(stopVars, record);
           haveMorePages = !stopEval.eval(stopVars, conf.pagination.stopCondition, Boolean.class);
           if (haveMorePages) {
-            next = Link.fromUri(record.get(conf.pagination.nextPageFieldPath).getValueAsString()).build();
+//            next = Link.fromUri(record.get(conf.pagination.nextPageFieldPath).getValueAsString()).build();
+              String resLinkes = response.getLinks().toString();
+              next = Link.fromUri(conf.resourceUrl.replace("${url}", "/") + resLinkes.split("<")[resLinkes.split("<").length-1].split(">;")[0].split("/")[3]).build();
           } else {
             next = null;
           }
