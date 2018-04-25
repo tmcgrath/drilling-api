@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.moil.stage.origin.sample;
+package com.moil.stage.origin;
 
 import com.moil.stage.origin.DrillingAPIDSource;
 import com.streamsets.pipeline.api.Record;
@@ -24,7 +24,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-public class TestSampleSource {
+public class TestDrillingAPISource {
   private static final int MAX_BATCH_SIZE = 5;
 
   @Test
