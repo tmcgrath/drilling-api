@@ -15,11 +15,10 @@
  */
 package com.moil.stage.origin;
 
-import com.streamsets.pipeline.api.ConfigDef;
-import com.streamsets.pipeline.api.ConfigGroups;
-import com.streamsets.pipeline.api.ExecutionMode;
-import com.streamsets.pipeline.api.GenerateResourceBundle;
-import com.streamsets.pipeline.api.StageDef;
+import com.streamsets.pipeline.api.*;
+import com.streamsets.pipeline.api.base.configurablestage.DSource;
+import com.streamsets.pipeline.stage.origin.http.HttpClientConfigBean;
+import com.streamsets.pipeline.stage.origin.http.HttpClientSource;
 
 @StageDef(
     version = 1,
@@ -30,24 +29,39 @@ import com.streamsets.pipeline.api.StageDef;
     recordsByRef = true,
     onlineHelpRefUrl = ""
 )
-@ConfigGroups(value = Groups.class)
+//@ConfigGroups(value = Groups.class)
+//@GenerateResourceBundle
+//public class DrillingAPIDSource extends DrillingAPISource {
+//
+//  @ConfigDef(
+//      required = true,
+//      type = ConfigDef.Type.STRING,
+//      defaultValue = "default",
+//      label = "Sample Config",
+//      displayPosition = 10,
+//      group = "SAMPLE"
+//  )
+//  public String config;
+//
+//  /** {@inheritDoc} */
+//  @Override
+//  public String getConfig() {
+//    return config;
+//  }
+//
+//}
+@HideConfigs(value = {
+        "conf.client.numThreads"
+})
+@ConfigGroups(com.streamsets.pipeline.stage.origin.http.Groups.class)
 @GenerateResourceBundle
-public class DrillingAPIDSource extends DrillingAPISource {
+public class DrillingAPIDSource extends DSource {
 
-  @ConfigDef(
-      required = true,
-      type = ConfigDef.Type.STRING,
-      defaultValue = "default",
-      label = "Sample Config",
-      displayPosition = 10,
-      group = "SAMPLE"
-  )
-  public String config;
+  @ConfigDefBean
+  public HttpClientConfigBean conf;
 
-  /** {@inheritDoc} */
   @Override
-  public String getConfig() {
-    return config;
+  protected Source createSource() {
+    return new HttpClientSource(conf);
   }
-
 }
